@@ -60,6 +60,19 @@ th, td {
   background: #eee;
   padding: 8px;
   margin: 5px 0;
+}
+/* LOGO IMAGE SIZES */
+.bank-logo-inline,
+.exchange-logo,
+.social-logo,
+.news-logo,
+.marketcap-logo,
+#marketcap-fullchart-icon {
+  width: 128px !important;
+  height: 128px !important;
+  object-fit: contain;
+}
+
 #settings-container {
   position: absolute;
   top: 10px;
