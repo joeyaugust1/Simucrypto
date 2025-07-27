@@ -73,6 +73,14 @@ th, td {
   object-fit: contain;
 }
 
+/* MarketCap coin icons/logos (not the main header/top logo) */
+.marketcap-coin-logo {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
 #settings-container {
   position: absolute;
   top: 10px;

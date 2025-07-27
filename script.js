@@ -989,7 +989,7 @@ function renderMarketcapList() {
     const row = document.createElement("div");
     row.className = "marketcap-list-row";
     row.innerHTML = `
-      <img src="${asset.logo}" alt="${asset.name} Logo" class="marketcap-crypto-logo" />
+      <img src="${asset.logo}" alt="${asset.name} Logo" class="marketcap-coin-logo" />
       <span class="marketcap-crypto-name">${asset.name}</span>
       <div class="marketcap-minichart-container">
         <canvas id="${miniChartId}" class="marketcap-minichart"></canvas>
