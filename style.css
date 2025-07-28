@@ -577,3 +577,325 @@ th, td {
     font-size: 18px;
   }
 }
+
+/* ============================================ */
+/* Exchange Tab Modern Dark Trading Style */
+/* ============================================ */
+
+/* Main Exchange Container */
+#exchange {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f29 100%);
+  color: #e0e0e0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Exchange Header Row */
+.exchange-header-row {
+  background: linear-gradient(135deg, #1e2329 0%, #2d3748 100%);
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 2px solid #00d4ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+}
+
+.exchange-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  flex: 1;
+  min-width: 200px;
+}
+
+.exchange-header-row > span:not(.exchange-title) {
+  background: rgba(0, 212, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  font-size: 16px;
+  font-weight: 600;
+  color: #00d4ff;
+  min-width: 180px;
+  text-align: center;
+}
+
+/* Exchange Buttons */
+.exchange-btn {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: #0f1419;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exchange-btn:hover {
+  background: linear-gradient(135deg, #33ddff 0%, #00b8e6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+.exchange-btn:active {
+  transform: translateY(0);
+}
+
+/* Exchange Layout Container */
+.exchange-flex {
+  display: flex;
+  gap: 32px;
+  padding: 32px;
+  min-height: calc(100vh - 120px);
+}
+
+/* Left and Right Sections */
+.exchange-left,
+.exchange-right {
+  background: linear-gradient(135deg, #1a1f29 0%, #2d3748 100%);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  min-width: 0;
+}
+
+.exchange-left h4,
+.exchange-right h4 {
+  color: #00d4ff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+/* Exchange Tables */
+#exchange table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  background: rgba(15, 20, 25, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#exchange th {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  color: #00d4ff;
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  position: relative;
+}
+
+#exchange th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #00d4ff 50%, transparent 100%);
+}
+
+#exchange td {
+  background: rgba(26, 31, 41, 0.9);
+  color: #e0e0e0;
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#exchange tbody tr:hover td {
+  background: rgba(0, 212, 255, 0.1);
+  color: #fff;
+}
+
+#exchange tbody tr:nth-child(even) td {
+  background: rgba(30, 35, 41, 0.9);
+}
+
+#exchange tbody tr:nth-child(even):hover td {
+  background: rgba(0, 212, 255, 0.15);
+}
+
+/* Trading Buttons in Tables */
+#exchange table button {
+  background: linear-gradient(135deg, #16a085 0%, #27ae60 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  min-width: 60px;
+}
+
+#exchange table button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.4);
+}
+
+/* Buy Buttons */
+#exchange table button[onclick*="buy"],
+#exchange table button[onclick*="Buy"] {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+#exchange table button[onclick*="buy"]:hover,
+#exchange table button[onclick*="Buy"]:hover {
+  background: linear-gradient(135deg, #2ecc71 0%, #58d68d 100%);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+}
+
+/* Sell Buttons */
+#exchange table button[onclick*="sell"],
+#exchange table button[onclick*="Sell"] {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+#exchange table button[onclick*="sell"]:hover,
+#exchange table button[onclick*="Sell"]:hover {
+  background: linear-gradient(135deg, #ec7063 0%, #e74c3c 100%);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+/* Portfolio Value Display */
+#exchange .exchange-right > div:last-child {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+/* Price highlighting */
+#exchange td:nth-child(2) {
+  color: #00d4ff;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+/* Owned coins highlighting */
+#exchange td:has-text("Owned:") {
+  font-size: 12px;
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* Responsive Design for Exchange */
+@media (max-width: 1024px) {
+  .exchange-flex {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+  
+  .exchange-header-row {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+  
+  .exchange-title {
+    font-size: 24px;
+  }
+  
+  .exchange-left,
+  .exchange-right {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exchange-header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .exchange-header-row > span:not(.exchange-title) {
+    min-width: auto;
+  }
+  
+  .exchange-flex {
+    padding: 16px;
+    gap: 20px;
+  }
+  
+  .exchange-left,
+  .exchange-right {
+    padding: 16px;
+  }
+  
+  #exchange th,
+  #exchange td {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+  
+  #exchange table button {
+    padding: 6px 8px;
+    font-size: 11px;
+    min-width: 50px;
+    margin: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exchange-title {
+    font-size: 20px;
+  }
+  
+  #exchange th,
+  #exchange td {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+  
+  #exchange table button {
+    padding: 4px 6px;
+    font-size: 10px;
+    min-width: 40px;
+  }
+}
+
+/* 
+Note: This modern dark trading interface provides a professional cryptocurrency 
+exchange experience with dark theme, neon accents, and smooth animations.
+The styling targets only exchange-specific elements to avoid affecting other tabs.
+*/
