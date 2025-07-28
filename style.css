@@ -577,3 +577,390 @@ th, td {
     font-size: 18px;
   }
 }
+
+/* ============================================ */
+/* Exchange Tab Modern Dark Trading Style */
+/* ============================================ */
+
+/* Exchange Section Container */
+#exchange {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1d29 50%, #0f1419 100%);
+  border-radius: 12px;
+  padding: 0;
+  margin: 16px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2d3748;
+  min-height: 600px;
+  color: #e2e8f0;
+}
+
+/* Exchange Header Row */
+.exchange-header-row {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  padding: 20px 32px;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.exchange-header-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4aa 0%, #00a8ff 50%, #00d4aa 100%);
+}
+
+/* Exchange Logo */
+.exchange-logo {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 212, 170, 0.3);
+  border: 2px solid #00d4aa;
+}
+
+/* Exchange Title */
+.exchange-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #00d4aa 0%, #00a8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: auto;
+}
+
+/* Exchange Balance */
+.exchange-header-row > span:not(.exchange-title) {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #e0e7ff;
+  border: 1px solid #4338ca;
+  box-shadow: 0 2px 8px rgba(67, 56, 202, 0.3);
+}
+
+/* Exchange Buttons */
+.exchange-btn {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exchange-btn:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+}
+
+.exchange-btn:active {
+  transform: translateY(0);
+}
+
+/* Exchange Flex Container */
+.exchange-flex {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  min-height: 500px;
+}
+
+/* Exchange Left and Right Columns */
+.exchange-left,
+.exchange-right {
+  flex: 1;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #4a5568;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.exchange-left::before,
+.exchange-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #00d4aa 50%, transparent 100%);
+}
+
+/* Exchange Section Headers */
+.exchange-left h4,
+.exchange-right h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #00d4aa 0%, #00a8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Exchange Tables */
+#exchange table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #374151 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4a5568;
+}
+
+#exchange table thead {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+#exchange table th {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #00d4aa;
+  padding: 16px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  border-bottom: 2px solid #00d4aa;
+  text-align: center;
+}
+
+#exchange table td {
+  background: linear-gradient(135deg, #2d3748 0%, #374151 100%);
+  color: #e2e8f0;
+  padding: 16px 12px;
+  border: none;
+  border-bottom: 1px solid #4a5568;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#exchange table tbody tr:hover td {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+#exchange table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Coin Names Styling */
+#exchange table td:first-child {
+  font-weight: 700;
+  color: #00d4aa;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Price Styling */
+#exchange table td:nth-child(2) {
+  font-weight: 700;
+  color: #00a8ff;
+  font-family: 'Courier New', monospace;
+}
+
+/* Trading Buttons in Tables */
+#exchange table button {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(30, 64, 175, 0.3);
+}
+
+#exchange table button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+/* Buy Buttons */
+#exchange table button:nth-of-type(1),
+#exchange table button:nth-of-type(2) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.3);
+}
+
+#exchange table button:nth-of-type(1):hover,
+#exchange table button:nth-of-type(2):hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+}
+
+/* Sell Buttons */
+#exchange table button:nth-of-type(3),
+#exchange table button:nth-of-type(4) {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+}
+
+#exchange table button:nth-of-type(3):hover,
+#exchange table button:nth-of-type(4):hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+/* Owned Amount Styling */
+#exchange table td:last-child {
+  font-weight: 600;
+  color: #fbbf24;
+  font-family: 'Courier New', monospace;
+}
+
+/* Portfolio Value Display */
+#exchange .exchange-right > div:last-child {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e0e7ff;
+  border: 1px solid #4338ca;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#portfolioValue {
+  color: #00d4aa;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Exchange Responsive Design */
+@media (max-width: 768px) {
+  #exchange {
+    margin: 8px 0;
+    border-radius: 8px;
+  }
+  
+  .exchange-header-row {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .exchange-logo {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  .exchange-title {
+    font-size: 22px;
+    margin-right: 0;
+  }
+  
+  .exchange-flex {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .exchange-left,
+  .exchange-right {
+    padding: 16px;
+  }
+  
+  #exchange table {
+    font-size: 14px;
+  }
+  
+  #exchange table th,
+  #exchange table td {
+    padding: 12px 8px;
+  }
+  
+  #exchange table button {
+    padding: 4px 8px;
+    font-size: 11px;
+    margin: 1px;
+  }
+  
+  .exchange-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exchange-header-row {
+    padding: 12px 16px;
+  }
+  
+  .exchange-title {
+    font-size: 18px;
+  }
+  
+  .exchange-flex {
+    padding: 16px;
+  }
+  
+  .exchange-left,
+  .exchange-right {
+    padding: 12px;
+  }
+  
+  #exchange table {
+    font-size: 12px;
+  }
+  
+  #exchange table th,
+  #exchange table td {
+    padding: 8px 4px;
+  }
+  
+  #exchange table button {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+}
+
+/* 
+Modal Integration Note:
+The exchange modals (like exchange-sendbank-modal) will automatically inherit 
+the existing .bank-modal styles for consistency with the overall design system.
+The dark theme colors complement the existing modal styling while maintaining
+the professional trading interface aesthetic.
+*/
