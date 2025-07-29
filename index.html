@@ -6,25 +6,10 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* Ensure all logo images are 128x128px */
-    .bank-logo-inline,
-    .exchange-logo,
-    .social-logo,
-    .news-logo,
-    .marketcap-logo {
-      width: 128px !important;
-      height: 128px !important;
-      object-fit: contain;
+    .bank-logo-inline, .exchange-logo, .social-logo, .news-logo, .marketcap-logo {
+      width: 128px !important; height: 128px !important; object-fit: contain;
     }
-
-    /* MarketCap coin icons/logos (not the main header logo) */
-    .marketcap-coin-logo {
-      width: 48px !important;
-      height: 48px !important;
-      object-fit: contain;
-      /* Add any specific styling for spacing if needed: */
-      vertical-align: middle;
-    }
+    .marketcap-coin-logo { width: 48px !important; height: 48px !important; object-fit: contain; vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -87,7 +72,6 @@
         <span class="main-link-desc">View historical price charts for all coins, powered by Chart.js.</span>
       </span>
     </div>
-    <!-- Whitepapers links -->
     <div class="main-link" onclick="showSection('whitepaper-solvex')">
       <img src="assets/file_00000000c2d4622fb9f7ff0b3e1dfbe2.png" alt="Solvex" class="bank-logo-inline" />
       <span class="bank-main-link-text">
@@ -218,10 +202,43 @@
       <img src="assets/file_000000003b1c61f8aee04dbbc167682c.png" alt="MarketCap Logo" class="marketcap-logo" />
       <span class="marketcap-title">CryptosMarketCap</span>
     </div>
-    <div id="marketcap-list"></div>
+    <div id="marketcap-list">
+      <!-- Example for 3 coins; render dynamically as needed -->
+      <div class="marketcap-chart-card">
+        <div class="marketcap-chart-header">
+          <img src="assets/coin1.png" alt="Coin 1" class="marketcap-coin-logo" />
+          <span class="marketcap-chart-coin-name">Solvex</span>
+          <span class="marketcap-chart-coin-price">$123.45</span>
+          <span class="marketcap-chart-coin-change up">+2.3%</span>
+          <span class="marketcap-coin-owned">(Owned: 10)</span>
+        </div>
+        <canvas class="marketcap-chart-canvas" id="chart-solvex"></canvas>
+      </div>
+      <div class="marketcap-chart-card">
+        <div class="marketcap-chart-header">
+          <img src="assets/coin2.png" alt="Coin 2" class="marketcap-coin-logo" />
+          <span class="marketcap-chart-coin-name">NeuraX</span>
+          <span class="marketcap-chart-coin-price">$47.89</span>
+          <span class="marketcap-chart-coin-change down">-0.9%</span>
+          <span class="marketcap-coin-owned">(Owned: 24)</span>
+        </div>
+        <canvas class="marketcap-chart-canvas" id="chart-neurax"></canvas>
+      </div>
+      <div class="marketcap-chart-card">
+        <div class="marketcap-chart-header">
+          <img src="assets/coin3.png" alt="Coin 3" class="marketcap-coin-logo" />
+          <span class="marketcap-chart-coin-name">CoreChain</span>
+          <span class="marketcap-chart-coin-price">$201.67</span>
+          <span class="marketcap-chart-coin-change up">+1.8%</span>
+          <span class="marketcap-coin-owned">(Owned: 5)</span>
+        </div>
+        <canvas class="marketcap-chart-canvas" id="chart-corechain"></canvas>
+      </div>
+      <!-- More coins can be dynamically inserted here -->
+    </div>
     <div id="marketcap-fullchart-container" style="display:none;">
       <div style="display:flex;align-items:center;gap:12px;">
-        <img id="marketcap-fullchart-icon" src="" alt="" style="width:32px;height:32px;">
+        <img id="marketcap-fullchart-icon" src="" alt="" style="width:44px;height:44px;">
         <span id="marketcap-fullchart-title"></span>
       </div>
       <canvas id="priceChart" height="200"></canvas>
@@ -247,15 +264,12 @@
     <button class="whitepaper-close-btn" onclick="showSection('results')" title="Close Whitepaper">&times;</button>
     <h2>Solvex Whitepaper</h2>
     <!-- ... (whitepaper content as previously given) ... -->
-    <!-- For brevity, see earlier full whitepaper block -->
   </div>
-  <!-- Whitepaper: NeuraX -->
   <div id="whitepaper-neurax" class="whitepaper-section" style="display:none; padding:24px; max-width:750px; margin:auto; position:relative;">
     <button class="whitepaper-close-btn" onclick="showSection('results')" title="Close Whitepaper">&times;</button>
     <h2>NeuraX Whitepaper</h2>
     <!-- ... (whitepaper content as previously given) ... -->
   </div>
-  <!-- Whitepaper: CoreChain -->
   <div id="whitepaper-corechain" class="whitepaper-section" style="display:none; padding:24px; max-width:750px; margin:auto; position:relative;">
     <button class="whitepaper-close-btn" onclick="showSection('results')" title="Close Whitepaper">&times;</button>
     <h2>Corechain Whitepaper</h2>
@@ -326,4 +340,4 @@
   <script src="script.js"></script>
 </div>
 </body>
-  </html>
+</html>
