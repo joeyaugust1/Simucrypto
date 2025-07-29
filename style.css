@@ -971,3 +971,129 @@ th, td {
     padding: 14px 10px 10px 10px;
   }
 }
+/* --- MARKETCAP TAB: Complementary Red & Green, Modern UI --- */
+
+#marketcap {
+  background: linear-gradient(135deg, #f4f6f8 0%, #fff 100%);
+  min-height: 520px;
+  padding: 32px 0 32px 0;
+}
+
+/* Header styling */
+.marketcap-header-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.marketcap-logo {
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: contain;
+}
+.marketcap-title {
+  font-size: 2em;
+  font-weight: 700;
+  color: #16a34a; /* deep green */
+  letter-spacing: 0.01em;
+}
+
+/* List/table container */
+#marketcap-list {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Coin row/card */
+.marketcap-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #e4e7eb;
+  box-shadow: 0 2px 10px 0 rgba(22,163,74,0.06);
+  padding: 12px 20px;
+  font-size: 1.10em;
+  transition: border 0.17s, box-shadow 0.17s;
+}
+.marketcap-row:hover {
+  border: 2px solid #16a34a;
+  box-shadow: 0 4px 20px 0 rgba(220,38,38,0.08);
+}
+.marketcap-coin-logo {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain;
+}
+.marketcap-coin-name {
+  min-width: 110px;
+  font-weight: 700;
+  color: #dc2626; /* deep red */
+  font-size: 1.08em;
+}
+.marketcap-coin-price {
+  min-width: 98px;
+  font-weight: 600;
+}
+.marketcap-coin-change {
+  min-width: 72px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.marketcap-coin-owned {
+  margin-left: auto;
+  font-size: 1em;
+  color: #737373;
+  font-weight: 500;
+}
+
+/* Red/green for up/down move */
+.up {
+  color: #16a34a !important; /* green */
+}
+.down {
+  color: #dc2626 !important; /* red */
+}
+
+/* Portfolio summary */
+.marketcap-portfolio-summary {
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+  background: #f8fafc;
+  border: 2px solid #16a34a;
+  border-radius: 17px;
+  font-size: 1.22em;
+  color: #222;
+  padding: 16px 24px;
+  font-weight: 600;
+  box-shadow: 0 2px 12px 0 rgba(22,163,74,0.08);
+  margin-bottom: 16px;
+}
+.portfolio-value {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 1.13em;
+  margin-left: 7px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #marketcap-list, .marketcap-portfolio-summary {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .marketcap-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 11px 9px;
+  }
+  .marketcap-portfolio-summary {
+    padding: 13px 8px;
+    font-size: 1em;
+  }
+}
