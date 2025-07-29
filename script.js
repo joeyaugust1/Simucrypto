@@ -984,19 +984,56 @@ function renderMarketcapList() {
   if (!container) return;
   container.innerHTML = "";
   MARKETCAP_ASSETS.forEach(asset => {
+    // Get coin data for price and change calculation
+    const coinData = coins[asset.coin];
+    if (!coinData) return;
+    
+    // Calculate price change (simplified - using a small random change for demo)
+    const priceHistory = window.priceHistory && window.priceHistory[asset.coin] ? window.priceHistory[asset.coin] : [];
+    let changePercent = 0;
+    let changeClass = '';
+    let changeSymbol = '';
+    
+    if (priceHistory.length >= 2) {
+      const currentPrice = parseFloat(coinData.price);
+      const previousPrice = priceHistory[priceHistory.length - 2].price;
+      changePercent = ((currentPrice - previousPrice) / previousPrice * 100);
+      
+      if (changePercent > 0) {
+        changeClass = 'up';
+        changeSymbol = '+';
+      } else if (changePercent < 0) {
+        changeClass = 'down';
+        changeSymbol = '';
+      } else {
+        changeClass = '';
+        changeSymbol = '';
+      }
+    }
+    
     // Create unique canvas id for each mini chart
     const miniChartId = `minichart-${asset.coin}`;
-    const row = document.createElement("div");
-    row.className = "marketcap-list-row";
-    row.innerHTML = `
-      <img src="${asset.logo}" alt="${asset.name} Logo" class="marketcap-coin-logo" />
-      <span class="marketcap-crypto-name">${asset.name}</span>
-      <div class="marketcap-minichart-container">
+    const card = document.createElement("div");
+    card.className = "marketcap-chart-card";
+    card.innerHTML = `
+      <div class="marketcap-card-header">
+        <div class="marketcap-card-info">
+          <img src="${asset.logo}" alt="${asset.name} Logo" class="marketcap-coin-logo" />
+          <h3 class="marketcap-coin-name">${asset.name}</h3>
+        </div>
+        <div class="marketcap-card-price-change">
+          <div class="marketcap-card-price">$${coinData.price}</div>
+          <div class="marketcap-card-change ${changeClass}">
+            ${changeSymbol}${Math.abs(changePercent).toFixed(2)}%
+          </div>
+        </div>
+      </div>
+      <div class="marketcap-chart-container">
         <canvas id="${miniChartId}" class="marketcap-minichart"></canvas>
       </div>
       <button class="marketcap-fullchart-btn" onclick="showMarketcapFullChart('${asset.coin}')">Show Full Chart</button>
     `;
-    container.appendChild(row);
+    container.appendChild(card);
     drawMiniChart(asset.coin, miniChartId);
     if (miniChartIntervals[asset.coin]) clearInterval(miniChartIntervals[asset.coin]);
     miniChartIntervals[asset.coin] = setInterval(() => drawMiniChart(asset.coin, miniChartId), 2000);
@@ -1016,30 +1053,34 @@ function drawMiniChart(coinName, canvasId) {
   const lastN = data.slice(-N);
   const prices = lastN.map(p => p.price);
   // Chart dimensions
-  const W = el.width = el.offsetWidth || 140;
-  const H = el.height = 42;
+  const W = el.width = el.offsetWidth || 200;
+  const H = el.height = 60;
   ctx.clearRect(0, 0, W, H);
   // Find min/max for scaling
   const minP = Math.min(...prices);
   const maxP = Math.max(...prices);
-  // Draw line
-  ctx.strokeStyle = "#1b3e86";
-  ctx.lineWidth = 2.5;
+  // Draw line with improved styling
+  ctx.strokeStyle = "#16a34a";
+  ctx.lineWidth = 3;
   ctx.beginPath();
   prices.forEach((p, i) => {
-    const x = (i / (N-1)) * (W-12) + 6;
-    const y = H - 6 - ((p-minP) / (maxP-minP || 1)) * (H-14);
+    const x = (i / (N-1)) * (W-20) + 10;
+    const y = H - 10 - ((p-minP) / (maxP-minP || 1)) * (H-20);
     if (i === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
   ctx.stroke();
-  // Dot for latest
+  // Dot for latest with improved styling
   ctx.beginPath();
-  const lastX = ((N-1) / (N-1)) * (W-12) + 6;
-  const lastY = H - 6 - ((prices[N-1]-minP) / (maxP-minP || 1)) * (H-14);
-  ctx.arc(lastX, lastY, 4, 0, 2*Math.PI);
-  ctx.fillStyle = "#1b3e86";
+  const lastX = ((N-1) / (N-1)) * (W-20) + 10;
+  const lastY = H - 10 - ((prices[N-1]-minP) / (maxP-minP || 1)) * (H-20);
+  ctx.arc(lastX, lastY, 5, 0, 2*Math.PI);
+  ctx.fillStyle = "#16a34a";
   ctx.fill();
+  // Add white border to dot
+  ctx.strokeStyle = "#fff";
+  ctx.lineWidth = 2;
+  ctx.stroke();
 }
 
 function renderMarketcapFullChart(coinName) {
@@ -1056,12 +1097,15 @@ function renderMarketcapFullChart(coinName) {
       datasets: [{
         label: `${coinName} Price`,
         data: prices,
-        borderColor: '#1b3e86',
-        borderWidth: 2,
-        tension: 0.18,
+        borderColor: '#16a34a',
+        borderWidth: 3,
+        tension: 0.15,
         fill: false,
-        pointRadius: 1,
-        backgroundColor: "#b4c9ea"
+        pointRadius: 2,
+        pointBackgroundColor: '#16a34a',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        backgroundColor: "#dcfdf7"
       }]
     },
     options: {
