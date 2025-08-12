@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+  <title>Platformer Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Start Page -->
+  <div id="startPage" class="fullscreen-overlay">
+    <img src="assets/file_0000000029dc61f8b10c6b03b7b1728e.png" class="bg-image" alt="Start Background"/>
+    <button id="startBtn" class="big-retro-btn">START GAME</button>
+  </div>
+  <!-- Intro Page -->
+  <div id="introPage" class="fullscreen-overlay" style="display:none;">
+    <img src="assets/25740e85-963a-4a8d-96ae-16455a0ec1bb_20250612_200426_0000.png" class="bg-image" alt="Intro Background"/>
+    <div class="introText">
+      <h2>Welcome to XYMine, created by GroundedFalse Software! FOR BEST COMPARABILITY PLAY ON MOBILE/TABLET DEVICES!!.</h2>
+      <p>
+        2:00 AM.
 
+Joey rides his electric scooter, a usual ritual when insomnia strikes. But tonight, a wrong turn leads him deep into an unfamiliar industrial estate. Lost and unsure, hope of finding a way out fades—until something catches his eye.
+
+A Solvex building.
+
+Joey, a crypto enthusiast, can't resist. As he approaches, he notices the building is oddly empty. The reception is vacant, yet the front door opens on its own. Curious, Joey steps inside. Behind the desk, a high-tech doorway suddenly slides open, revealing a vast chamber filled floor to ceiling with hardware.
+
+In the center, a lone computer screen glows.
+
+It displays a single prompt: "Start."
+
+Joey presses the button…
+
+      </p>
+      <button id="continueBtn" class="big-retro-btn">CONTINUE</button>
+    </div>
+  </div>
+  <!-- Game Container -->
+  <div id="gameContainer" style="display:none;">
+    <canvas id="gameCanvas"></canvas>
+    <div id="controls">
+      <button class="control-btn left" aria-label="Move Left">&#x25C0;</button>
+      <button class="control-btn jump" aria-label="Jump">JUMP</button>
+      <button class="control-btn right" aria-label="Move Right">&#x25B6;</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+        </html>
