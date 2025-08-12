@@ -1,1 +1,224 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: #87CEFA;
+  overflow: hidden;
+}
 
+body, #gameContainer {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+/* Fullscreen overlays for start and intro */
+.fullscreen-overlay {
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.bg-image {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* On mobile: show entire image (may have bars) */
+@media (max-width: 600px) and (orientation: portrait) {
+  .bg-image {
+    object-fit: contain;
+    background: #000; /* set a fallback bg color */
+  }
+}
+
+/* Retro Start/Continue Button Style with transparency */
+.big-retro-btn {
+  z-index: 2;
+  padding: 2em 3em;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.2em;
+  color: #fff;
+  background: rgba(17, 17, 17, 0.55); /* 55% opaque */
+  border: 6px solid #41ff80;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  margin: 2em 0 0 0;
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #41ff80;
+  letter-spacing: 2px;
+  transition: background 0.2s;
+}
+.big-retro-btn:hover, .big-retro-btn:active {
+  background: rgba(34, 34, 34, 0.65); /* Slightly less transparent on hover/active */
+}
+
+/* Intro page text box styling */
+.introText {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 2em;
+  border-radius: 20px;
+  margin-top: 8vh;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5em;
+  max-width: 90vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.introText h2 {
+  margin-bottom: 1em;
+  color: #41ff80;
+  font-size: 0.5em;
+  text-shadow: 2px 2px 0 #111;
+}
+.introText p {
+  margin-bottom: 2em;
+}
+//* For mobile screens, make it even smaller */
+@media (max-width: 600px) {
+  .introText {
+    font-size: 0.4em;
+    padding: 1em;
+  }
+}
+
+/* Hide debug if present */
+#debug { display: none !important; }
+
+/* Game canvas and controls (same as before) */
+#gameCanvas {
+  display: block;
+  background: #222;
+  border: 4px solid #444;
+  border-radius: 18px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+#controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(40, 40, 40, 0.97);
+  z-index: 10;
+  gap: 4vw;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.20);
+  pointer-events: none;
+}
+
+.control-btn {
+  background-color: #222;
+  color: white;
+  font-size: 7vw;
+  font-family: 'Press Start 2P', cursive;
+  padding: 6vw 0;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.36);
+  cursor: pointer;
+  width: 25vw;
+  min-width: 0;
+  min-height: 0;
+  transition: background-color 0.2s;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-btn.jump {
+  font-size: 4vw;
+  letter-spacing: 1.5px;
+}
+
+/* Responsive tweaks as before... */
+@media (max-width: 600px) and (orientation: portrait) {
+  #controls {
+    height: 20vh;
+    gap: 2vw;
+    padding-bottom: env(safe-area-inset-bottom, 2vw);
+  }
+  .control-btn {
+    font-size: 9vw;
+    width: 28vw;
+    padding: 8vw 0;
+    border-radius: 20px;
+  }
+  .control-btn.jump {
+    font-size: 5vw;
+  }
+  #gameCanvas {
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
+}
+@media (min-width: 601px) and (max-width: 1000px) and (orientation: portrait) {
+  #controls {
+    height: 17vh;
+    gap: 2vw;
+    padding-bottom: env(safe-area-inset-bottom, 2vw);
+  }
+  .control-btn {
+    font-size: 6vw;
+    width: 23vw;
+    padding: 6vw 0;
+    border-radius: 18px;
+  }
+  .control-btn.jump {
+    font-size: 4vw;
+  }
+  #gameCanvas {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+  }
+}
+@media (min-width: 1001px) {
+  #controls {
+    height: 12vh;
+    gap: 3vw;
+    background: rgba(40,40,40,0.93);
+  }
+  .control-btn {
+    font-size: 2.4vw;
+    width: 13vw;
+    padding: 1.5vw 0;
+    border-radius: 14px;
+  }
+  .control-btn.jump {
+    font-size: 1vw;
+  }
+  #gameCanvas {
+    margin-top: 4vh;
+    margin-bottom: 0;
+  }
+  }
